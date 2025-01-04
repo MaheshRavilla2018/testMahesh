@@ -1,8 +1,8 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/ferrous-module-446709-u1/github.com/MaheshRavilla2018/testMahesh:$COMMIT_SHA', '.' ]
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/ferrous-module-446709-u1/gcregistry/testMahesh:$COMMIT_SHA', '.' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/ferrous-module-446709-u1/github.com/MaheshRavilla2018/testMahesh:$COMMIT_SHA']
+    args: ['push', 'us-central1-docker.pkg.dev/ferrous-module-446709-u1/gcregistry/testMahesh:$COMMIT_SHA']
 
 
 options:
