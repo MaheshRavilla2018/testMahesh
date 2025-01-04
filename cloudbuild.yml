@@ -4,7 +4,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ferrous-module-446709-u1/github.com/MaheshRavilla2018/testMahesh:$COMMIT_SHA']
 
-serviceAccount: "30844134140-compute@developer.gserviceaccount.com"
 
 options:
   logging: CLOUD_LOGGING_ONLY
