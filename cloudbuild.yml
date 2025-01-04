@@ -1,23 +1,5 @@
-name: 'Push Docker GCR'
-description: 'Push docker image to Google Container Registry'
-branding:
-  color: 'green'
-  icon: 'box'
-inputs:
-  gcr_host:
-    description: 'Google Container Registry Host'
-    default: 'gcr.io'
-  image_name:
-    description: 'Docker Image Name'
-    required: true
-  image_tag:
-    description: 'Docker Image Tag'
-    required: true
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-
-serviceAccount: "serviceaccount@developer.gserviceaccount.com"
-
-options:
-  logging: CLOUD_LOGGING_ONLY
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/ferrous-module-446709-u1/github.com/MaheshRavilla2018/testMahesh:$COMMIT_SHA', '.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/ferrous-module-446709-u1/github.com/MaheshRavilla2018/testMahesh:$COMMIT_SHA']
